@@ -1,32 +1,40 @@
-# Prerequisites
-*.d
+#include <fstream>
+#include <iostream>
+#include <string>
+using namespace std;
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
 
-# Precompiled Headers
-*.gch
-*.pch
+int main() {
+	int n, x, y;
+	const int width = 15;
+	const int height = 15;
+	string slova[4];
+	basic_string <char>::size_type size;
+	cin >> n;
+	//-------------------------
+	for (int i = 0; i < n; i++)
+		cin >> slova[i];
+	for (int i = 0; i < n; i++) {
+		size = slova[i].size();
+		if (slova[i + 1].size() > slova[i].size());
+			cout << slova[i + 1];
+		cout << slova[i].size() << endl;
+	}
+	//--------------------------
+	for (int i = 0; i < width + 1; i++) cout << "-"; cout << endl; //Вверхняя граница.
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+	for (int i = 0; i < height; i++) {
+		for (int j = 0; j < width; j++) {
+			if (j == 15) {
+				cout << "|";//Граница сбоку(Слева и Справа).
+			}
+			cout << " "; // Заполнение поля - пустыми полями.
+			cout << endl;
+		}
+	}
 
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
+	for (int i = 0; i < width + 1; i++)cout << "-"; //Нижняя граница.
+	//-------------------------------
+	system("pause");
+	return 0;
+}
